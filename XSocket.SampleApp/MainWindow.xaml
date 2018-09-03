@@ -1,0 +1,40 @@
+﻿<Window x:Class="XSocket.SampleApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xtlv="http://schemas.xray.com/wpf/xaml/xtreelistview"
+        mc:Ignorable="d"
+        Title="XSocket.SampleApp" Height="350" Width="525" Closing="MainWindow_OnClosing">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" x:Name="Start" Click="Start_Click">Start server</Button>
+            <Button Grid.Column="1" x:Name="Shutdown" Click="Shutdown_Click">Shutdown server</Button>
+            <Button Grid.Column="2" x:Name="Join" Click="Join_Click" >Join client</Button>
+            <Button Grid.Column="3" x:Name="Leave" Click="Leave_Click" IsEnabled="False">Leave client</Button>
+            <Button Grid.Column="4" x:Name="Reconnect" Click="Reconnect_OnClick" IsEnabled="False">Reconnect client</Button>
+        </Grid>
+
+        <xtlv:TreeListView x:Name="Clients" Grid.Row="1" DefaultMessage="No client connected" SelectionChanged="OnClientSelectionChanged">
+            <xtlv:TreeListView.ColumnsCollection>
+                <xtlv:TreeListViewColumnCollection>
+                    <xtlv:TreeListViewColumn Header="Id" DataMemberBindingPath="Id" />
+                    <xtlv:TreeListViewColumn Header="Status" DataMemberBindingPath="Status" />
+                </xtlv:TreeListViewColumnCollection>
+            </xtlv:TreeListView.ColumnsCollection>
+        </xtlv:TreeListView>
+    </Grid>
+</Window>
+
