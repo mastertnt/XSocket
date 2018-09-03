@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>XSocket</id>
+    <version>1.0.0</version>
+    <authors>mrHide</authors>
+    <owners>mrHide</owners>
+    <licenseUrl>https://github.com/mastertnt/XSocket/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/mastertnt/XSocket</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A library to exchange commands through network.</description>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>NET C#</tags>
+    <dependencies>
+      <dependency id="AwesomeSockets" version="2.0.8.0" />
+	  <dependency id="Fody" version="1.29.4" />
+	  <dependency id="NUnit" version="3.10.1" />
+	  <dependency id="PropertyChanged.Fody" version="1.51.0" />
+	  <dependency id="Sprache" version="2.1.2" />
+	  <dependency id="XScriptedObject" version="1.0.0" />
+    </dependencies>
+
+  </metadata>
+  	<files>
+	<file src="..\Build\Release_x86\XScriptedObject.dll" target="lib\net45" />
+  </files>
+</package>
